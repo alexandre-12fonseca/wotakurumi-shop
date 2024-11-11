@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wotakurumi Shop</title>
+
+    <!-- Adicionando Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link href="css/index.css" type="text/css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .tab {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tab button {
+            background-color: #f1f1f1;
+            border: none;
+            padding: 14px 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border-top: none;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            font-weight: bold;
+            color: #333;
+        }
+
+        center img {
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .produto-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .produto-item {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .produto-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .produto-item h3 {
+            font-size: 20px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .produto-item p {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>@Wotakurumi Shop</h1>
+
+    <center>
+        <img src="imagens/project3.jfif" width="500">
+    </center>
+
+    <br>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Sobre')">Sobre</button>
+        <button class="tablinks" onclick="openTab(event, 'Serviços')">Serviços</button>
+        <button class="tablinks" onclick="openTab(event, 'Produtos')">Produtos</button>
+        <button class="tablinks" onclick="openTab(event, 'Contato')">Contato</button>
+    </div>
+
+    <div id="Sobre" class="tabcontent">
+        <h2>Sobre a Wotakurumi:</h2>
+        <p>A Wotakurumi oferece arte fofinha pra usar e decorar, com itens personalizados e super fofinhos. Nossos produtos são 100% artesanais e feitos com muito carinho.</p>
+    </div>
+
+    <div id="Serviços" class="tabcontent">
+        <h2>Produtos oferecidos:</h2>
+        <ul>
+            <li>Acessórios em crochê</li>
+            <li>Punch Needle (ponto russo)</li>
+            <li>Amigurumis</li>
+        </ul>
+        <p>Disponíveis para compra através de nossos canais oficiais. Veja mais informações sobre encomendas na aba "Contato".</p>
+    </div>
+
+    <div id="Produtos" class="tabcontent">
+        <h2>Produtos Disponíveis:</h2>
+        <div class="produto-container">
+            <div class="produto-item">
+                <img src="imagens/produto1.jpeg" alt="Produto 1">
+                <h3>Bear Hat - Chapéu de Urso</h3>
+                <p>Um adorável chapéu de urso feito à mão com técnica de amigurumi. Perfeito para presentear.</p>
+            </div>
+
+            <div class="produto-item">
+                <img src="imagens/produto2.jpeg" alt="Produto 2">
+                <h3>Punch Needle - (Ponto russo)</h3>
+                <p>Arte em ponto russo com um belo design floral, ideal para enfeitar qualquer ambiente.</p>
+            </div>
+
+            <div class="produto-item">
+                <img src="imagens/produto3.jpeg" alt="Produto 3">
+                <h3>Chaveiro de Crochê</h3>
+                <p>Chaveiro fofinho em crochê, disponível em diversas cores e formatos.</p>
+            </div>
+
+            <div class="produto-item">
+                <img src="imagens/produto4.jpg" alt="Produto 4">
+                <h3>Anya Forger Spy x Family - Amigurumi</h3>
+                <p>Um adorável amigurumi da Anya de Spy x Family feito à mão.
+                Também perfeito para presentear ou decorar seu espaço.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="Contato" class="tabcontent">
+        <h2>Contato:</h2>
+        <p>Para mais informações, visite nosso <a href="https://linktr.ee/cahrrots" target="_blank" rel="noopener noreferrer">linktr.ee</a>.</p>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        document.getElementsByClassName('tablinks')[0].click();
+    </script>
+
+</body>
+</html>
